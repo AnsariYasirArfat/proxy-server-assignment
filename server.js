@@ -27,7 +27,7 @@ app.post("/generate-token", async (_req, res) => {
 });
 
 // Endpoint to get products
-app.post("/get-products", async (req, res) => {
+app.post("/plan-list", async (req, res) => {
   try {
     const response = await fetch("https://dev-test.cimet.io/plan-list", {
       method: "POST",
