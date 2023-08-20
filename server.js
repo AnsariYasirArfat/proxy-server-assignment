@@ -1,13 +1,15 @@
 import express from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
-
+import cors from "cors";
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // Endpoint to generate token
 app.post("/generate-token", async (_req, res) => {
